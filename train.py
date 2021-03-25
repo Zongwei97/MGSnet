@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2020/7/5
-# @Author  : Lart Pang
-# @Email   : lartpang@163.com
-# @File    : main.py
-# @Project : HDFNet
-# @GitHub  : https://github.com/lartpang
+
 import os
 import os.path as osp
 import shutil
