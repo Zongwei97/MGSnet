@@ -29,9 +29,9 @@ model.copy_params_from_vgg16_bn(vgg16_bn)
 model.cuda()
 params = model.parameters()
 optimizer = torch.optim.Adam(params, opt.lr)
-image_root = '/home/visiting/TrainingSet_3/RGB/'
-depth_root = '/home/visiting/TrainingSet_3/depth/'
-gt_root = '/home/visiting/TrainingSet_3/GT/'
+image_root = 'Your TrainingSet RGB path'
+depth_root = 'Your TrainingSet depth path'
+gt_root = 'Your TrainingSet GT path'
 
 train_loader = get_loader(image_root, depth_root, gt_root, batchsize=opt.batchsize, trainsize=opt.trainsize)
 total_step = len(train_loader)
@@ -90,7 +90,7 @@ def train(train_loader, model, optimizer, epoch):
             print('{} Epoch [{:03d}/{:03d}], Step [{:04d}/{:04d}], Loss: {:.4f}'.
                   format(datetime.now(), epoch, opt.epoch, i, total_step, loss.data))
 
-    save_path = '/home/visiting/CVPR2020-A2dele_baseline/models/vgg16_RGB_simple_init_zacn/'
+    save_path = 'your save path'
 
     if not os.path.exists(save_path):
         os.makedirs(save_path)
