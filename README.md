@@ -1,6 +1,6 @@
 # MGSnet
 
-This the official repo of Modality Guided Subnetwork for salient object detection.
+This the official repo of Modality Guided Subnetwork for salient object detection (3DV 2021).
 
 The pseudo depth is estimated by the MiDaS https://github.com/isl-org/MiDaS.
 
