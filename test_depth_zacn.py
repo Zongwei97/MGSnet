@@ -9,10 +9,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=256, help='testing size')
 opt = parser.parse_args()
 
-dataset_path = '/home/visiting/TestingSet_new/'
-
 model = vgg16_depth()
-model.load_state_dict(torch.load('/home/visiting//CVPR2020-A2dele_baseline/models/vgg16_RGB_simple_init_zacn/42_w.pth'))
+model.load_state_dict(torch.load('path of weight'))
 
 model.cuda()
 model.eval()
@@ -24,9 +22,9 @@ for dataset in test_datasets:
     save_path = './results/VGG16_simple_init_zacn/' + dataset + '/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
-    image_root = '/home/visiting/TestingSet/'+ dataset + '/RGB/'
-    depth_root = '/home/visiting/TestingSet/'+ dataset + '/depth/'
-    gt_root = '/home/visiting/TestingSet/'+ dataset + '/GT/'
+    image_root = 'Your TestingSet path'+ dataset + '/RGB/'
+    depth_root = 'Your TestingSet path'+ dataset + '/depth/'
+    gt_root = 'Your TestingSet path'+ dataset + '/GT/'
 
     test_loader = test_dataset(image_root, gt_root, depth_root, opt.testsize)
     for i in range(test_loader.size):
